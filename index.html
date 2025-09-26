@@ -45,6 +45,55 @@
 
     /* About */
     #about{background:var(--secondary)}
+  /* ===== About Section ===== */
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;        /* stacks on small screens */
+  margin-top: 2rem;
+}
+
+.about-text {
+  flex: 1 1 450px;        /* grows but keeps min width */
+  text-align: left;
+}
+
+.about-photo {
+  flex: 0 0 350px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-avatar {
+  width: 320px;         /* square width */
+  height: 320px;        /* square height */
+  border-radius: 8px;   /* small rounding, optional */
+  object-fit: contain;
+
+  border: 6px solid var(--accent);  
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+}
+
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .about-wrapper {
+    flex-direction: column-reverse; /* image below text on small screens */
+    text-align: center;
+  }
+  .about-text { text-align: center; }
+}
+
+}
+
     .about-grid{display:grid;grid-template-columns:3fr 2fr;gap:3rem;align-items:center}
     .about-image img{width:100%;border-radius:8px;box-shadow:var(--shadow)}
     .skill-tags{margin-top:.5rem}
@@ -284,7 +333,7 @@
 
 .carousel-track {
   display: flex;
-  transition: transform 0.8s ease-in-out;
+  transition: transform 1s ease-in-out;
   width: 100%;
 }
 
@@ -360,7 +409,7 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#education">Education</a></li>
           <li><a href="#certifications">Certifications</a></li>
-          <li><a href="C:\Users\moham\Desktop\port\resume\Mohamed_Javid_Resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="resume\Mohamed_Javid_Resume.pdf" target="_blank">Resume</a></li>
 
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -389,37 +438,44 @@
   </section>
 
   <!-- About -->
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <div class="about-grid">
-        <div>
-          <p>
-            I'm a dedicated software developer with hands-on experience across Java, Python, C, Web Development, React, SQL, and Cloud Security. I love solving real-world problems with clean, scalable code.
-          </p>
-          <p>
-            Notable work includes a <strong>Blockchain-Based Voting System</strong> leveraging ZKP and IPFS, and systems automation on AWS.
-          </p>
-          <div class="skill-tags">
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Express.js</span>
-            <span class="tech-tag">SQL</span>
-            <span class="tech-tag">AWS</span>
-            <span class="tech-tag">Blockchain</span>
-            <span class="tech-tag">ZKP</span>
-            <span class="tech-tag">IPFS</span>
-          </div>
-        </div>
-        <div class="about-image">
-          <!-- Replace with your real photo path -->
-          <img src="C:\Users\moham\Desktop\Jans\IMG-20240529-WA0010.jpg" alt="Mohamed Javid">
+  <!-- ===== About Section ===== -->
+<section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+
+    <div class="about-wrapper">
+      <!-- Left side – Text -->
+      <div class="about-text">
+        <p>
+          I'm a dedicated software developer with hands-on experience in
+          <strong>Java, Python, C, Web Development, React, SQL, and Cloud Security</strong>.
+          I love solving real-world problems with clean, scalable code.
+        </p>
+        <p>
+          Notable work includes a <strong>Blockchain-Based Voting System</strong>
+          leveraging ZKP and IPFS, and systems automation on AWS.
+        </p>
+
+        <div class="skill-tags">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">AWS</span>
+          <span class="tech-tag">Blockchain</span>
+          <span class="tech-tag">ZKP</span>
+          <span class="tech-tag">IPFS</span>
         </div>
       </div>
+
+      <!-- Right side – Image -->
+      <div class="about-photo">
+        <img src="images/me.jpg" alt="Mohamed Javid" class="profile-avatar">
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Skills -->
   <!-- Skills Section -->
@@ -472,15 +528,18 @@
 
       <!-- Skill 8 -->
       <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS Logo">
-        <h3>AWS</h3>
-      </div>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js Logo">
+  <h3>Node.js</h3>
+</div>
+
 
       <!-- Skill 9 -->
       <div class="skill-card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux Logo">
-        <h3>Linux</h3>
-      </div>
+  <img src="https://cdn-icons-png.flaticon.com/512/732/732225.png" alt="MS Office Logo" style="width:60px;height:60px;">
+  <h3>MS Office</h3>
+</div>
+
+
 
     </div>
   </div>
@@ -531,7 +590,7 @@
         <!-- Project 3 -->
         <div class="project-card">
           <div class="project-image">
-            <img src="C:\Users\moham\Desktop\opencv.png" alt="Image to Video Converter">
+            <img src="images/imgtovid.png" alt="Image to Video Converter">
           </div>
           <div class="project-content">
             <h3>Image to Video Converter</h3>
@@ -542,6 +601,7 @@
             </div>
           </div>
         </div>
+        
         <!-- Project 4 -->
         <div class="project-card">
           <div class="project-image">
@@ -557,6 +617,24 @@
             </div>
           </div>
         </div>
+        <!-- Project 5 -->
+<div class="project-card">
+  <div class="project-image">
+    <img src="images/portfolio.png" alt="Portfolio Website">
+  </div>
+  <div class="project-content">
+    <h3>Personal Portfolio Website</h3>
+    <p>My personal portfolio website built using HTML, CSS, and JavaScript showcasing my skills, projects, experience, education, and achievements.</p>
+    <div class="project-tech">
+      <span class="tech-tag">HTML</span>
+      <span class="tech-tag">CSS</span>
+      <span class="tech-tag">JavaScript</span>
+      <span class="tech-tag">Responsive Design</span>
+    </div>
+    
+  </div>
+</div>
+
       </div>
     </div>
   </section>
@@ -618,7 +696,7 @@
           <h3>B.E. Computer Science & Engineering</h3>
           <span class="edu-year">2021 – 2025</span>
           <p class="edu-school">M.I.E.T. Engineering College, Trichy</p>
-          <p class="edu-score">CGPA: <strong>9.3</strong></p>
+          <p class="edu-score">CGPA: <strong>9.07</strong></p>
         </div>
       </div>
 
@@ -708,7 +786,7 @@
       <div class="carousel-track">
 
         <!-- Slide 1 -->
-        <div class="achievement-slide" style="background-image: url('images/best-outgoing.jpg');">
+        <div class="achievement-slide" style="background-image: url('images/bestog.jpg');">
           <div class="achievement-overlay">
             <h3>🏆 Best Outgoing Student (2025)</h3>
             <p>Awarded Best Outgoing Student of the Year 2025 for excellence in academics, leadership & innovation.</p>
@@ -716,7 +794,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="achievement-slide" style="background-image: url('images/topper-3rd-year.jpg');">
+        <div class="achievement-slide" style="background-image: url('images/third.jpg');">
           <div class="achievement-overlay">
             <h3>🥇 Topper – Third Year</h3>
             <p>Secured first rank in 3rd year B.E CSE with outstanding performance.</p>
@@ -724,7 +802,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="achievement-slide" style="background-image: url('images/topper-2nd-year.jpg');">
+        <div class="achievement-slide" style="background-image: url('images/second.jpg');">
           <div class="achievement-overlay">
             <h3>🥇 Topper – Second Year</h3>
             <p>Achieved top rank in 2nd year with consistent academic excellence.</p>
@@ -732,7 +810,7 @@
         </div>
 
         <!-- Slide 4 -->
-        <div class="achievement-slide" style="background-image: url('images/highest-cgpa.jpg');">
+        <div class="achievement-slide" style="background-image: url('images/highest.jpg');">
           <div class="achievement-overlay">
             <h3>🎓 Highest CGPA</h3>
             <p>Maintained a remarkable CGPA of 9.3 across semesters at MIET Engineering College.</p>
@@ -754,31 +832,34 @@
 
 
   <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <div class="contact-wrap">
-        <div class="contact-grid">
-          <!-- Form (simple mailto fallback) -->
-          <form class="contact-form" action="mailto:mohamedjavid@example.com" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit" class="submit-btn">Send Message</button>
-          </form>
-          <!-- Direct contact card -->
-          <div class="contact-card">
-            <h3 style="color:var(--text-white);margin-bottom:.6rem;">Reach me directly</h3>
-            <p>Email: <a href="mailto:mohamedjavid@example.com">mohamedjavid1705@example.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/javid17" target="_blank" rel="noopener">linkedin.com/in/javid17</a></p>
-            <p>GitHub: <a href="https://github.com/jansaaf1705" target="_blank" rel="noopener">github.com/jansaaf1705</a></p>
-            <p>Phone: <span style="color:var(--text-primary)">+91-7708101099</span></p>
-            <p style="margin-top:.8rem;opacity:.8;font-size:.9rem">Replace placeholders with your real links & phone.</p>
-          </div>
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <div class="contact-wrap">
+      <div class="contact-grid">
+
+        <!-- Form (Formspree integration) -->
+        <form class="contact-form" action="https://formspree.io/f/xvgbeynp" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <!-- Direct contact card -->
+        <div class="contact-card">
+          <h3 style="color:var(--text-white);margin-bottom:.6rem;">Reach me directly</h3>
+          <p>Email: <a href="mailto:mohamedjavid1705@example.com">mohamedjavid1705@example.com</a></p>
+          <p>LinkedIn: <a href="https://linkedin.com/in/javid17" target="_blank" rel="noopener">linkedin.com/in/javid17</a></p>
+          <p>GitHub: <a href="https://github.com/jansaaf1705" target="_blank" rel="noopener">github.com/jansaaf1705</a></p>
+          <p>Phone: <span style="color:var(--text-primary)">+91-7708101099</span></p>
         </div>
+
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer>
